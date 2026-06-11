@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="weatherBackground"></div>
+
+    <header class="top-header glass">
+
+        <h1 class="app-logo">
+            🌦 Crazy Weather
+        </h1>
+
+        <button id="menuBtn" class="menu-btn">
+            &#9776;
+        </button>
+
+    </header>
+
+   <div class="dashboard">
+
+        <aside class="sidebar glass">
+
+            <h2 class="sidebar-logo">
+            WeatherX
+            </h2>
+
+            <ul>
+                <li><a href="#dashboard">🏠 Dashboard</a></li>
+
+                <li><a href="#locations">📍 Locations</a></li>
+
+                <li><a href="#forecastSection">📊 Forecast</a></li>
+
+                <li id="settingsBtn">⚙ Settings</li>
+
+                <ul id="settingsMenu" style="display:none;">
+
+                    <li id="toggleTheme">🌙 Dark Mode</li>
+
+                    <li id="autoLocation">📍 Auto Location</li>
+
+                    <li id="searchHistoryBtn">
+                    💾 Search History
+                    </li>
+
+                </ul>
+
+                <div id="historyPopup"
+                style="display:none;">
+                </div>
+            </ul>
+
+        </aside>
+
+        <main class="main-content">
+
+            <div class="hero glass" id="dashboard">
+
+                <h1 id="weatherTitle">Live Weather</h1>
+
+                <p id="dateTime"></p>
+
+                <h2 id="cityName">Search a City</h2>
+
+                <img id="weatherIcon" src="">
+
+                <div class="temp" id="temperature">
+                    --°C
+                </div>
+
+                <p id="description"></p>
+
+                <div class="details">
+                    <span>
+                        Humidity:
+                        <span id="humidity">--</span>%
+                    </span>
+
+                    <span>
+                        Wind:
+                        <span id="wind">--</span>
+                        km/h
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="search-panel glass">
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search city">
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+                <button id="locationBtn">
+                    📍 My Location
+                </button>
+
+            </div>
+
+            <div class="forecast-container glass" id="forecastSection">
+
+                <h3>5-Day Forecast</h3>
+
+                <div id="forecast"></div>
+
+            </div>
+
+            <div class="locations-panel glass" id="locations">
+
+                <h3>Saved Locations</h3>
+
+                <div id="cityWidgets"></div>
+
+            </div>
+
+            <div class="details-panel glass">
+
+                <h3>Selected Day Details</h3>
+
+                <p>
+                    📅 Date:
+                    <span id="detailDate">--</span>
+                </p>
+
+                <p>
+                    🌡 Temperature:
+                    <span id="detailTemp">--</span>
+                </p>
+
+                <p>
+                    ☁ Condition:
+                    <span id="detailCondition">--</span>
+                </p>
+
+            </div>
+
+            <div class="analytics-panel glass">
+
+                <h3>📊 Weather Analytics</h3>
+
+                <p>🌡 Feels Like: <span id="analyticsFeels">--</span></p>
+
+                <p>💧 Humidity: <span id="analyticsHumidity">--</span></p>
+
+                <p>🌬 Wind: <span id="analyticsWind">--</span></p>
+
+                <p>📈 Pressure: <span id="pressure">--</span></p>
+
+                <p>👀 Visibility: <span id="visibility">--</span></p>
+
+                <p>☀ Sunrise: <span id="sunrise">--</span></p>
+
+                <p>🌙 Sunset: <span id="sunset">--</span></p>
+
+            </div>
+
+            <div class="chart-container glass">
+
+                <h3>Temperature Trend</h3>
+
+                <canvas id="tempChart"></canvas>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <div id="loading">
+        Loading...
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js"></script>
+
+    <footer class="footer glass">
+
+        <p>
+            © 2026 Created by Siddhartha Kotnaka
+        </p>
+
+    </footer>
+
+</body>
+</html>
